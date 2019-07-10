@@ -1,0 +1,24 @@
+{
+    "name": "imnpc/duobeiyun",
+    "description": "duobeiyun php sdk",
+    "keywords": ["duobeiyun"],
+    "homepage": "https://github.com/imnpc/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "imnpc",
+            "email": "qilidi@gmail.com",
+            "homepage": "http://www.imnpc.me/"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.6"
+    },
+    "autoload":{
+        "psr-4":{
+            "Imnpc\\Duobeiyun\\":"src/"
+        }
+    }
+}
