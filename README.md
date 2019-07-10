@@ -17,7 +17,7 @@ composer require "imnpc/duobeiyun"
 ```php
 use Imnpc\Duobeiyun\DuobeiyunApi;
 
-$client = new DuobeiyunApi();
+$client = new DuobeiyunApi($partnerId,$appKey);
 echo $client->createRoom(
     "测试多贝云01",                  // title
     strtotime("2014/12/8 15:40"),   // startTime
