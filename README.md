@@ -17,17 +17,21 @@ composer require "imnpc/duobeiyun"
 ```php
 use Imnpc\Duobeiyun\DuobeiyunApi;
 
-$client = new DuobeiyunApi($partnerId,$appKey);
+$partnerId ="xxxx";
+$appKey="xxxx";
+$serverAddress = "https://api.duobeiyun.net";//官方目前拥有 api.duobeiyun.com  api.duobeiyun.net 2个接口  默认com的可不传递本参数
+
+$client = new DuobeiyunApi($partnerId,$appKey,$serverAddress);
 echo $client->createRoom(
-    "测试多贝云01",                  // title
-    strtotime("2014/12/8 15:40"),   // startTime
-    3,                              // duration
+    "测试多贝云",                  // title
+    strtotime("2019/7/11 10:40"),   // startTime
+    1,                              // duration
     DuobeiyunApi::$ROOM_HAS_VIDEO,  // video
     DuobeiyunApi::$ROOM_TYPE_1vN    // roomType
   );
 ```
 
-## 参考
+## 接口参考
 
 - [官方PHP-SDK](http://docs.duobeiyun.com/php)
 

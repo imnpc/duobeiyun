@@ -70,11 +70,10 @@ class DuobeiyunApi {
 	private $partnerId;
 	private $appKey;
 
-	function __construct($partnerId,$appKey) {
+	function __construct($partnerId,$appKey,$serverAddress = "https://api.duobeiyun.com") {
 		if(!function_exists('curl_init')) {
 			echo '[DuobeiyunAPI][Error][Please enable curl in php.ini]';
 		}
-		$serverAddress = "https://api.duobeiyun.com";
 		$this->serverAddress = $serverAddress;
 		$this->partnerId = $partnerId;
 		$this->appKey = $appKey;
@@ -292,8 +291,8 @@ class DuobeiyunApi {
 		$path = "/api/v4/room/listDocuments";
 		$postBody = json_encode(array("roomIds" => $roomIds));
 		$url = $path . "?" . $this->buildParamStr($params);
-		echo "postBody:" . $postBody . " url:" . $url;
-		echo "\n";
+//		echo "postBody:" . $postBody . " url:" . $url;
+//		echo "\n";
 		$result = $this->postBody($url, $postBody);
 		return $result;
 	}
@@ -484,8 +483,8 @@ class DuobeiyunApi {
 		$params["timestamp"] = (string)time() . "000";
 		$sign = $this->buildSign($params);
 		$params["sign"] = $sign;
-		echo $sign;
-		echo "\n";
+//		echo $sign;
+//		echo "\n";
 		return $params;
 	}
 	
@@ -498,8 +497,8 @@ class DuobeiyunApi {
 			}
 		}
 		sort($validParams);
-		echo implode("&", $validParams) . $this->appKey;
-		echo "\n";
+//		echo implode("&", $validParams) . $this->appKey;
+//		echo "\n";
 		$sign = md5(implode("&", $validParams) . $this->appKey);
 		return $sign;
 	}
